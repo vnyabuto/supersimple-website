@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+  <div class="overlay"></div>
+        <button id="toggleThemes">choose theme</button>
+    
+      <div class="theme-option" id="darkMode">Dark</div>
+      <div class="theme-option" id="defaultMode">System Default</div>
+      <div class="theme-option" id="lightMode">Light</div>
+    
+     
+      <script>
+    
+        function setTheme(theme) {
+          const body = document.querySelector('body');
+          body.classList.remove('dark', 'light');
+          if (theme === 'dark') {
+            body.classList.add('dark');
+          } else if (theme === 'light') {
+            body.classList.add('light');
+          }
+        }
+    
+        function handleThemeClick(event) {
+          const theme = event.target.id.replace('Mode', '');
+          setTheme(theme);
+          localStorage.setItem('themePreference', theme);
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+          const themePreference = localStorage.getItem('themePreference');
+          if (themePreference) {
+            setTheme(themePreference);
+          }
+        });
+    
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+          option.addEventListener('click', handleThemeClick);
+        });
+    
+        const toggleThemesButton = document.getElementById('toggleThemes');
+        toggleThemesButton.addEventListener('click', function() {
+          themeOptions.forEach(option => {
+            option.style.display = option.style.display === 'none' ? 'inline-block' : 'none';
+          });
+        });
+      </script>
+  
+    <header>
+      <h1>F65 Victor .co ARTS</h1>
+        <nav>
+            <ul>
+                <button><li><a href="Home.html">Home</a></li></button>
+                <button><li><a href="About.html">About</a></li></button>
+                <button><li><a href="Blog.html">Blog</a></li></button>
+                <button><li><a href="Contact.html">Contact</a></li></button>
+                <button><li><a href="Portfolio.html">Portfolio</a></li></button>
+            </ul>
+           
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>F65 Victor .co ARTS</h2>
+            <p>If you want to get in touch with me, you can reach me at vnyabuto00@gmail.com. You can aslo contact me via the contact details below.</p>
+                <main>
+                    <section>
+                        <h2><b><u>Contact Information</u></b></h2>
+                        <p>
+                            <strong>F65 Victor .co ARTS</strong><br>
+                            Location: Times tower 5<sup>th</sup> Floor room No. 65A<br>
+                            Nairobi, City Estate, P.O BOX 3562,<br>
+                            Nairobi, Kenya
+                        </p>
+            
+                        <p>
+                            <strong>Email:</strong> <a href="mailto:vnyabuto00@gmail.com">vnyabuto00@gmail.com</a><br>
+                            <strong>Phone:</strong>0704076311/0707651961<br>
+                            <strong>Tel:</strong> 0256333333
+                        </p>
+            
+                        <h3>Business Hours</h3>
+                        <p>
+                            Monday - Friday: 8:00 AM - 5:00 PM<br>
+                            Saturday: 10:00 AM - 2:00 PM<br>
+                            Sunday: Closed
+                        </p>
+                    </section>
+               
+    </main>
+
+    <footer>
+        <p>&copy; Victor Nyabuto. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

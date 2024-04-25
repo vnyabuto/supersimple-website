@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+  <div class="overlay"></div>
+        <button id="toggleThemes">choose theme</button>
+    
+      <div class="theme-option" id="darkMode">Dark</div>
+      <div class="theme-option" id="defaultMode">System Default</div>
+      <div class="theme-option" id="lightMode">Light</div>
+    
+     
+      <script>
+
+        function setTheme(theme) {
+          const body = document.querySelector('body');
+          body.classList.remove('dark', 'light');
+          if (theme === 'dark') {
+            body.classList.add('dark');
+          } else if (theme === 'light') {
+            body.classList.add('light');
+          }
+        }
+    
+        function handleThemeClick(event) {
+          const theme = event.target.id.replace('Mode', '');
+          setTheme(theme);
+          localStorage.setItem('themePreference', theme);
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+          const themePreference = localStorage.getItem('themePreference');
+          if (themePreference) {
+            setTheme(themePreference);
+          }
+        });
+
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+          option.addEventListener('click', handleThemeClick);
+        });
+    
+        const toggleThemesButton = document.getElementById('toggleThemes');
+        toggleThemesButton.addEventListener('click', function() {
+          themeOptions.forEach(option => {
+            option.style.display = option.style.display === 'none' ? 'inline-block' : 'none';
+          });
+        });
+      </script>
+    <header>
+        <h1>F65 Victor .co ARTS</h1>
+        <nav>
+            <ul>
+                <button><li><a href="Home.html">Home</a></li></button>
+                <button><li><a href="About.html">About</a></li></button>
+                <button><li><a href="Blog.html">Blog</a></li></button>
+                <button><li><a href="Contact.html">Contact</a></li></button>
+                <button><li><a href="Portfolio.html">Portfolio</a></li></button>
+            </ul>
+        </nav>
+        
+    </header>
+    <main>
+      <h2><u>About Me</u></h2>
+      <p>Welcome to my artistic world! I am Victor Nyabuto, an enthusiastic and passionate artist based in <b>Nairobi, Kenya.</b>
+          Art has been my lifelong passion, and through my creations, I endeavor to convey emotions and inspire those who
+          engage with my work.
+
+          My artistic journey began at an early age when I discovered the enchanting world of colors and shapes. Over the
+          years, I have honed my skills and explored various mediums, from acrylics and oils to digital art. Each medium
+          allows me to express my creativity in unique ways, and I continuously seek to push the boundaries of my art.
+
+          Nature serves as a profound source of inspiration for me. The beauty of landscapes, the elegance of flora and
+          fauna, and the ever-changing play of light captivate my imagination and find their way into my artwork. Moreover,
+          the complexities of human emotions and the human experience also play a significant role in my creations.
+
+          As you browse through my portfolio, you will discover a diverse collection of artwork that showcases my artistic
+          evolution. From intricate illustrations to bold abstract compositions, each piece holds a part of my creative
+          soul.
+
+          My ultimate goal as an artist is to connect with my audience on a deep and personal level. I hope that my art
+          resonates with you, evokes emotions, and perhaps ignites your own creative spark.
+
+          Thank you for visiting my portfolio, and I invite you to explore the realm of imagination and wonder through my
+          artwork. If you have any inquiries, collaboration proposals, or simply want to share your thoughts, feel free to
+          <a href="Contact.html">contact me</a> through the provided channels..<br><br><br>
+        
+
+          <b>Artfully yours,</b><br>
+          <b>Victor Nyabuto.</b>
+      </p>
+  </main>
+ 
+    <footer>
+        <p>&copy; Victor Nyabuto. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

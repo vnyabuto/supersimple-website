@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+        <button id="toggleThemes">choose theme</button>
+
+      <div class="theme-option" id="darkMode">Dark</div>
+      <div class="theme-option" id="defaultMode">System Default</div>
+      <div class="theme-option" id="lightMode">Light</div>
+    
+     
+      <script>
+        function setTheme(theme) {
+          const body = document.querySelector('body');
+          body.classList.remove('dark', 'light');
+          if (theme === 'dark') {
+            body.classList.add('dark');
+          } else if (theme === 'light') {
+            body.classList.add('light');
+          }
+        }
+    
+        function handleThemeClick(event) {
+          const theme = event.target.id.replace('Mode', '');
+          setTheme(theme);
+          localStorage.setItem('themePreference', theme);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const themePreference = localStorage.getItem('themePreference');
+          if (themePreference) {
+            setTheme(themePreference);
+          }
+        });
+    
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+          option.addEventListener('click', handleThemeClick);
+        });
+    
+        const toggleThemesButton = document.getElementById('toggleThemes');
+        toggleThemesButton.addEventListener('click', function() {
+          themeOptions.forEach(option => {
+            option.style.display = option.style.display === 'none' ? 'inline-block' : 'none';
+          });
+        });
+      </script>
+    <header>
+        <h1>F65 Victor .co ARTS</h1>
+        <nav>
+            <ul>
+                <button><li><a href="Home.html">Home</a></li></button>
+                <button><li><a href="About.html">About</a></li></button>
+                <button><li><a href="Blog.html">Blog</a></li></button>
+                <button><li><a href="Contact.html">Contact</a></li></button>
+                <button><li><a href="Portfolio.html">Portfolio</a></li></button>
+            </ul>
+        </nav>
+      
+    </header>
+
+        <main>
+              <h2><u>My Portfolio</u></h2>
+              <p>Welcome to my diverse and captivating portfolio. Here, I present a collection of my latest artworks, each born from the depths of my imagination and passion for creativity.
+      
+              As an artist, I find inspiration in the world around me. Nature's ever-changing beauty, the interplay of light and shadow, and the emotions that color our lives all find their way into my artwork. Each piece carries a unique story, a glimpse into my artistic journey.
+      
+              My art is an exploration of different mediums and styles. From bold and energetic abstract paintings that reflect the essence of life to delicate and intricate illustrations that capture moments of quiet introspection, I delight in experimenting and pushing the boundaries of my creativity.
+      
+              I believe that art is a universal language that transcends barriers and connects people on a profound level. My hope is that my art resonates with your soul, evokes emotions, and sparks curiosity. Every stroke, every color, and every detail is an invitation for you to embark on a visual adventure.
+      
+              In addition to my personal creations, I also take pride in collaborating with fellow artists and clients. Bringing their visions to life and creating meaningful art together is a gratifying experience that adds depth to my artistic expression.
+      
+              Thank you for taking the time to explore my portfolio. As you browse through the various pieces, I hope you feel a sense of joy, wonder, and perhaps find a connection with the art that touches your heart.
+      
+              If you wish to acquire any of the artworks displayed here or discuss potential collaborations, I am more than delighted to hear from you. Feel free to reach out through the provided contact channels, and let's embark on a journey of artistic inspiration together.
+      
+              Artfully yours,
+              Victor Nyabuto
+              </p>
+        </main>
+
+    <footer>
+        <p>&copy; Victor Nyabuto. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

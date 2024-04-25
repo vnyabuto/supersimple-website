@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+  <div class="overlay"></div>
+        <button id="toggleThemes">choose theme</button>
+    
+      <div class="theme-option" id="darkMode">Dark</div>
+      <div class="theme-option" id="defaultMode">System Default</div>
+      <div class="theme-option" id="lightMode">Light</div>
+    
+     
+      <script>
+
+        function setTheme(theme) {
+          const body = document.querySelector('body');
+          body.classList.remove('dark', 'light');
+          if (theme === 'dark') {
+            body.classList.add('dark');
+          } else if (theme === 'light') {
+            body.classList.add('light');
+          }
+        }
+    
+        function handleThemeClick(event) {
+          const theme = event.target.id.replace('Mode', '');
+          setTheme(theme);
+          localStorage.setItem('themePreference', theme);
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+          const themePreference = localStorage.getItem('themePreference');
+          if (themePreference) {
+            setTheme(themePreference);
+          }
+        });
+    
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+          option.addEventListener('click', handleThemeClick);
+        });
+    
+        const toggleThemesButton = document.getElementById('toggleThemes');
+        toggleThemesButton.addEventListener('click', function() {
+          themeOptions.forEach(option => {
+            option.style.display = option.style.display === 'none' ? 'inline-block' : 'none';
+          });
+        });
+      </script>
+    <header>
+        <h1>F65 Victor .co ARTS</h1>
+        <nav>
+            <ul>
+                <button><li><a href="Home.html">Home</a></li></button>
+                <button><li><a href="About.html">About</a></li></button>
+                <button><li><a href="Blog.html">Blog</a></li></button>
+                <button><li><a href="Contact.html">Contact</a></li></button>
+                <button><li><a href="Portfolio.html">Portfolio</a></li></button>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        <section>
+            <h2>Latest Blog Posts</h2>
+        </section>
+    </main>
+    <main>
+      <section>
+          <p>Hello! here are my latest blog posts. </p>
+          <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)" border="0" src="glf1.jpg" alt="image" width="300" height="300">
+          <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)" border="0" src="glf2.jpg" alt="image" width="300" height="300">
+          <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)" border="0" src="glf3.jpg" alt="image" width="300" height="300">
+          <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)" border="0" src="arts.jpeg" alt="image" width="300" height="300">
+      </section>
+  </main>
+  <script>
+      function bigImg(x) {
+        x.style.height = "350px";
+        x.style.width = "350px";
+      }
+      
+      function normalImg(x) {
+        x.style.height = "300px";
+        x.style.width = "300px";
+      }
+    
+      </script>
+    <footer>
+        <p>&copy; Victor Nyabuto. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
