@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>js random recipe</title>
+    <link rel="stylesheet" href="recipe.css"> 
+    <style>
+       
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: rgb(119, 119, 247);
+}
+
+        .recipe-container {
+            text-align: center;
+        }
+        img {
+            max-width: 1000px;
+            max-height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>DIANI REEF BEACH HOTEL: WE OFFER THE BEST SOLUTION.</b></h1>
+    <iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="http://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+    <div class="recipe-container">
+        <h2>Recipe:</h2>
+        <img id="recipeImage" src="" alt="Recipe Image">
+        <h2 id="recipeName"></h2>
+        <p id="menuCategory"></p>
+        <p id="recipePrice"></p>
+    </div>
+
+    <script>
+       
+        const recipes = [
+            {
+                name: "chai mandazi",
+                image: "chai mandazi.jpeg",
+                category: "breakfast",
+                price: "ksh 60"
+            },
+            {
+                name: "brown chapati plain",
+                image: "chapati.jpeg",
+                category: "dinner/breakfast",
+                price: "ksh 30"
+            },
+            {
+                name: "chapati chai",
+                image: "chapo tea.jpg",
+                category: "breakfast",
+                price: "ksh 70"
+            },
+            {
+                name: "rice kamande",
+                image: "rice kamande.jpeg",
+                category: "full meal",
+                price: "ksh 250"
+            },
+            {
+                name: "ugali beef with sukuma",
+                image: "ugali beef with sukuma.jpeg",
+                category: "lunch/dinner",
+                price: "ksh 280"
+            },
+            {
+                name: "chicken burger",
+                image: "chicken burger.jpeg",
+                category: "dessert",
+                price: "ksh 350"
+            },
+            {
+                name: "chips masala",
+                image: "chips masala.jpeg",
+                category: "lunch",
+                price: "ksh 180"
+            },
+            {
+                name: "fried eggs with sausages with black tea",
+                image: "fried eggs with sausages.jpeg",
+                category: "breakfast",
+                price: "ksh 150"
+            },
+            {
+                name: "githeri plain",
+                image: "githeri 2.jpeg",
+                category: "full lunch/supper meal",
+                price: "ksh 300"
+            },
+            {
+                name: "Mokimo beef mix",
+                image: "mokimo beef mix.jpeg",
+                category: "Lunch",
+                price: "ksh 450"
+            },
+            {
+                name: "Pilau chapo mix",
+                image: "pilau chapo mix.jpeg",
+                category: "Full meal",
+                price: "ksh 520"
+            },
+            {
+                name: "pilau 1/4 chicken",
+                image: "pilau chicken.jpeg",
+                category: "Full meal",
+                price: "ksh 400"
+            },
+            {
+                name: "Pilau plain",
+                image: "pilau.jpeg",
+                category: "Lunch",
+                price: "ksh 200"
+            },
+        ];
+
+        function displayRandomRecipe() {
+            const randomIndex = Math.floor(Math.random() * recipes.length);
+            const randomRecipe = recipes[randomIndex];
+
+           
+            document.getElementById("recipeImage").src = randomRecipe.image;
+            document.getElementById("recipeName").textContent = randomRecipe.name;
+            document.getElementById("menuCategory").textContent = "Category: " + randomRecipe.category;
+            document.getElementById("recipePrice").textContent = "Price: " + randomRecipe.price;
+        }
+
+        
+        displayRandomRecipe();
+    </script>
+</body>
+</html>
