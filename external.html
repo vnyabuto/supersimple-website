@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="external.css">
+</head>
+<b><h1>Registration form</h1></b>
+<body>
+  <form>
+    <label for="first-name">First Name:</label>
+    <input type="text" id="first-name" name="first-name" required><br><br>
+
+    <label for="last-name">Last Name:</label>
+    <input type="text" id="last-name" name="last-name" required><br><br>
+
+    <b><label>Gender:</label></b>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label><br><br>
+
+    <label for="phone-number">Phone Number:</label>
+    <input type="tel" id="phone-number" name="phone-number" required><br><br>
+
+    <b><label>Hobby:</label><br></b>
+    <input type="checkbox" id="swimming" name="hobby" value="swimming">
+    <label for="swimming">Swimming</label><br>
+    <input type="checkbox" id="football" name="hobby" value="football">
+    <label for="football">Football</label><br>
+    <input type="checkbox" id="other-hobby" name="hobby" value="other">
+    <label for="other-hobby">Other</label><br><br><br>
+
+    <b><label for="comments">Comments:</label><br></b>
+    <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+</body>
+</html>

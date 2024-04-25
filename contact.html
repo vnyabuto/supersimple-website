@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="profile.css">
+    </head>
+    <body>
+        <!DOCTYPE html>
+<html>
+<head>
+  <title>Theme Switcher</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      background-color: #333;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 10px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .theme-option {
+      display: none;
+      margin: 10px;
+      cursor: pointer;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .theme-option.active {
+      background-color: #ccc;
+    }
+
+    /* Dark mode styles */
+    body.dark {
+      background-color: #222;
+      color: #fff;
+    }
+
+    body.dark .container {
+      background-color: #333;
+    }
+
+    body.dark .theme-option {
+      background-color: #444;
+      color: #fff;
+    }
+
+    body.dark .theme-option.active {
+      background-color: #fff;
+      color: #222;
+    }
+
+    /* Light mode styles */
+    body.light {
+      background-color: #fff;
+      color: #222;
+    }
+
+    body.light .container {
+      background-color: #f5f5f5;
+    }
+
+    body.light .theme-option {
+      background-color: #f0f0f0;
+      color: #222;
+    }
+
+    body.light .theme-option.active {
+      background-color: #222;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+    <!-- Button to toggle theme options visibility -->
+    <button id="toggleThemes">select theme</button>
+  </div>
+
+  <!-- Theme Options in the Navigation Panel -->
+  <div class="theme-option" id="darkMode">Dark</div>
+  <div class="theme-option" id="defaultMode">System Default</div>
+  <div class="theme-option" id="lightMode">Light</div>
+
+ 
+  <script>
+    // Function to set the theme based on the user's choice
+    function setTheme(theme) {
+      const body = document.querySelector('body');
+      body.classList.remove('dark', 'light');
+      if (theme === 'dark') {
+        body.classList.add('dark');
+      } else if (theme === 'light') {
+        body.classList.add('light');
+      }
+    }
+
+    // Function to handle click events on theme options
+    function handleThemeClick(event) {
+      const theme = event.target.id.replace('Mode', '');
+      setTheme(theme);
+      // Save the user's preference in local storage
+      localStorage.setItem('themePreference', theme);
+    }
+
+    // Restore user's theme preference from local storage on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const themePreference = localStorage.getItem('themePreference');
+      if (themePreference) {
+        setTheme(themePreference);
+      }
+    });
+
+    // Attach click event listeners to theme options
+    const themeOptions = document.querySelectorAll('.theme-option');
+    themeOptions.forEach(option => {
+      option.addEventListener('click', handleThemeClick);
+    });
+
+    // Toggle theme options visibility on button click
+    const toggleThemesButton = document.getElementById('toggleThemes');
+    toggleThemesButton.addEventListener('click', function() {
+      themeOptions.forEach(option => {
+        option.style.display = option.style.display === 'none' ? 'inline-block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
+
+        <header>
+            <img src="vct.jpg"style="width:95px;height:80px">
+            <nav>
+                <ul>
+                    <button><li><a href="profile.html">profile page</a></li></button>
+                    <button><li><a href="contact.html">contact page</a></li></button>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>
+                My profile contacts
+            </h1>
+            <table border = "1">
+                <thead>
+                    <tr>
+                       <b><td colspan = "4">List of students who won the MKU bursary Academic year 2022</td></b>
+                    </tr>
+                 </thead> 
+                <tr>
+                    <th><b>Admission number</b></th>
+                    <th><b>Gender</b></th>
+                    <th><b>Amount (ksh)</b></th>
+                    <th><b>Year of study</b></th>
+                </tr>
+                <tr>
+                    <td>BBIT/2020/10206</td>
+                    <td>M</td>
+                    <td>50,000</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>MIT/2021/39972</td>
+                    <td>F</td>
+                    <td>40,000</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>BIT/2022/8896</td>
+                    <td>M</td>
+                    <td>60,000</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>BCOM/2021/1387</td>
+                    <td>F</td>
+                    <td>70,000</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </main>
+    
+    <footer>
+        <p><FONT color="#000000">copyright &bcopy @vnyabuto00@gmail.com all right reserved</FONT></p>
+    </footer>
+    </body>
+</html>

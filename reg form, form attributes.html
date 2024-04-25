@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form attributes</title>
+</head>
+<body>
+  <h1>Registration Form attributes</h1>
+  <form action="submit.php" method="post">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required><br><br>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required><br><br>
+
+    <b><label for="gender">Gender:</label></b>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label><br><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
+
+    <b><label for="hobby">Hobby:</label><br></b>
+    <input type="checkbox" id="swimming" name="hobby[]" value="swimming">
+    <label for="swimming">Swimming</label><br>
+    <input type="checkbox" id="football" name="hobby[]" value="football">
+    <label for="football">Football</label><br>
+    <input type="checkbox" id="other" name="hobby[]" value="other">
+    <label for="other">Other</label><br><br>
+
+    <b><label for="comments">Comments:</label><br></b>
+    <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+</body>
+</html>
